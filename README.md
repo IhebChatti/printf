@@ -23,8 +23,8 @@ Holberton school project `printf`
 
 ## Authors
 
-IhebChatti - Holberton school student
-KoeusIss - Holberton school student
+* IhebChatti - Holberton school student
+* KoeusIss - Holberton school student
 
 ## Acheivment:
 
