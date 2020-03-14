@@ -2,13 +2,13 @@
 #include <stdarg.h>
 
 /**
- * _putchar - writes the character c to stdout
+ * _write - writes the character c to stdout
  * @c: The character to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _putchar(char c)
+int _write(char c)
 {
 	return (write(1, &c, 1));
 }
@@ -19,12 +19,12 @@ void string_conv(va_list args)
 
 	s = va_arg(args, char *);
 	while (*s)
-		_putchar(*s++);
+		_write(*s++);
 }
 
 void char_conv(va_list args)
 {
-	_putchar(va_arg(args, int));
+	_write(va_arg(args, int));
 }
 /**
 *print_number - print an integer
@@ -37,24 +37,24 @@ void print_number(int n)
 		print_number(n / 10);
 		if (n > 0)
 		{
-			_putchar ((n % 10) + '0');
+			_write ((n % 10) + '0');
 		}
 		else
 		{
-			_putchar (-n % 10 + '0');
+			_write (-n % 10 + '0');
 		}
 	}
 	else if ((n / 10 == 0) && (n % 10 != 0) && (n > 0))
 	{
-		_putchar ((n % 10) + '0');
+		_write ((n % 10) + '0');
 	}
 	else if ((n / 10 == 0) && (n % 10 != 0) && (n <= 0))
 	{
-		_putchar ('-');
-		_putchar ((-n % 10) + '0');
+		_write ('-');
+		_write ((-n % 10) + '0');
 	}
 	else if (n == 0)
-		_putchar ('0');
+		_write ('0');
 }
 void decimal_conv(va_list args)
 {
