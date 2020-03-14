@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdlib.h>
 #include <stdarg.h>
 
 /**
@@ -9,9 +10,15 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0;
+	int i = 0, j;
 	va_list args;
-	
+
+	spec_t specs[] = {
+		{"c", char_conv},
+		{"s", string_conv},
+		{"d", decimal_conv},
+		{NULL, NULL}
+	};
 
 	va_start(args, format);
 
@@ -21,20 +28,17 @@ int _printf(const char *format, ...)
 		{
 			_write(format[i]);
 		}
-		else
+
+		if (format[i - 1] == '%')
 		{
-			i++;
-			switch (format[i])
+			j = 0;
+			while ((specs + j)->c)
 			{
-				case 'c':
-					char_conv(args);
-					break;
-				case 's':
-					string_conv(args);
-					break;
-				case 'd':
-					decimal_conv(args);
-					break;
+				if (*(specs + j)->c == format[i])
+					(specs + j)->f(args);
+				if (*(specs + j)->c == '%')
+					_write('%');
+				j++;
 			}
 		}
 		i++;
