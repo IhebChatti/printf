@@ -5,7 +5,7 @@
 *@s: char to be printed
 *@Return: 1 
 */
-int _write(va_list s)
+int _write(char s)
 {
 	return (write(1, &s, 1));
 }
