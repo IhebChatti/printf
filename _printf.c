@@ -10,7 +10,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, j;
+	int i = 0, j, count = 0;
 	va_list args;
 
 	spec_t specs[] = {
@@ -34,18 +34,23 @@ int _printf(const char *format, ...)
 				if (*(specs + j)->c == '%')
 					_write('%');
 				j++;
+				count++;
 			}
 			i++;
+			count ++;
 			continue;
 		}
 		else if (format[i] != '%')
 			_write(format[i]);
 		i++;
+		if (*(specs + j)->f != NULL)
+			count++;
+		else count = i - 1;
 	}
 
 	va_end(args);
 
-	return (i - 1);
+	return (count);
 }
 
 
