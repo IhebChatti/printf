@@ -26,6 +26,7 @@ void char_conv(va_list args)
 {
 	_write(va_arg(args, int));
 }
+
 /**
 *print_number - print an integer
 *@n: int
@@ -56,6 +57,7 @@ void print_number(int n)
 	else if (n == 0)
 		_write ('0');
 }
+
 void decimal_conv(va_list args)
 {
 	int n = va_arg(args, int);

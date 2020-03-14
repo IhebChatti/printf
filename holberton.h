@@ -12,11 +12,11 @@
 typedef struct spec
 {
 	char *c;
-	void (*f)(char *);
+	void (*f)(va_list);
 } spec_t;
 
 int _printf(const char *format, ...);
-void _putchar(char);
+void _write(char);
 void string_conv(va_list);
 void char_conv(va_list);
 void decimal_conv(va_list);
