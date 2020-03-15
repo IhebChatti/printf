@@ -3,8 +3,8 @@
 #include <stdarg.h>
 
 /**
- * struct conversion_spec - Conversion specifire
- * @spec: specifier
+ * struct spec - Conversion specifire
+ * @c: specifier
  * @f: conversion function
  *
  * Description: a Conversion wrapper
