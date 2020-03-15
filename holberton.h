@@ -16,9 +16,10 @@ typedef struct spec
 } spec_t;
 
 int _printf(const char *format, ...);
-void _write(char);
-void string_conv(va_list);
-void char_conv(va_list);
-void decimal_conv(va_list);
+int _write(char);
+void printstring(va_list);
+void printchar(va_list);
+void printdecimal(va_list);
+void numbertobuf(int);
 
 #endif /* printf */
