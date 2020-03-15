@@ -24,6 +24,8 @@ int _printf(const char *format, ...)
 
 	SPEC;
 	va_start(args, format);
+	if (format == NULL)
+		return (-1);
 	while ((f = format[i]) != '\0')
 	{
 		if (f != '%' && !last_is_percent)
