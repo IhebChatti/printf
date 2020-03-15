@@ -12,14 +12,14 @@
 typedef struct spec
 {
 	char *c;
-	void (*f)(va_list);
+	int (*f)(va_list);
 } spec_t;
 
 int _printf(const char *format, ...);
 int _write(char);
-void printstring(va_list);
-void printchar(va_list);
-void printdecimal(va_list);
+int printstring(va_list);
+int printchar(va_list);
+int printdecimal(va_list);
 void numbertobuf(int);
 
 #endif /* printf */

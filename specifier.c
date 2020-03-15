@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include "holberton.h"
+
 /**
  * _write - writes the character c to stdout
  * @c: The character to print
@@ -19,13 +20,16 @@ int _write(char c)
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-void printstring(va_list args)
+int printstring(va_list args)
 {
 	char *s;
 
 	s = va_arg(args, char *);
+	if (s == NULL)
+		return (-1);
 	while (*s)
 		_write(*s++);
+	return (0);
 }
 /**
  * printchar - prints a char to stdout
@@ -34,9 +38,10 @@ void printstring(va_list args)
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-void printchar(va_list args)
+int printchar(va_list args)
 {
 	_write(va_arg(args, int));
+	return (0);
 }
 /**
  * printdecimal - prints a decimal number to stdout
@@ -45,9 +50,10 @@ void printchar(va_list args)
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-void printdecimal(va_list args)
+int printdecimal(va_list args)
 {
 	int n = va_arg(args, int);
 
 	numbertobuf(n);
+	return(0);
 }
