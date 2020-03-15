@@ -1,6 +1,15 @@
 #include "holberton.h"
 #include <stdlib.h>
 #include <stdarg.h>
+
+#define SPEC spec_t specs[] = {\
+		{"c", printchar},\
+		{"s", printstring},\
+		{"d", printdecimal},\
+		{"i", printdecimal},\
+		{NULL, NULL} \
+	}
+
 /**
  * _printf - printf
  * @format: the format
@@ -9,19 +18,11 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, j = 0;
-	int length = 0;
-	int last_is_percent = 0;
+	int i = 0, j = 0, length = 0, last_is_percent = 0;
 	va_list args;
 	char f;
 
-	spec_t specs[] = {
-		{"c", printchar},
-		{"s", printstring},
-		{"d", printdecimal},
-		{"i", printdecimal},
-		{NULL, NULL}
-	};
+	SPEC;
 	va_start(args, format);
 	while ((f = format[i]) != '\0')
 	{
