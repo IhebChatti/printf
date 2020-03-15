@@ -24,8 +24,7 @@ int _printf(const char *format, ...)
 
 	SPEC;
 	va_start(args, format);
-	if (!format || (format[i] == '%' && !format[i + 1]) ||
-	(format[i] == '%' && format[i + 1] == ' ' && !format[i + 2]))
+	if (!format || (format[i] == '%' && !format[i + 1]) || args == NULL)
 		return (-1);
 	while ((f = format[i]) != '\0')
 	{
