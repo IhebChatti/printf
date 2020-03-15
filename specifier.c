@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <stdarg.h>
+#include <stdlib.h>
 #include "holberton.h"
 
 /**
@@ -26,7 +27,15 @@ int printstring(va_list args)
 
 	s = va_arg(args, char *);
 	if (s == NULL)
-		return (-1);
+	{
+		_write('(');
+		_write('n');
+		_write('u');
+		_write('l');
+		_write('l');
+		_write(')');
+		return(-1);
+	}
 	while (*s)
 		_write(*s++);
 	return (0);
