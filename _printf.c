@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+#define MAX_BUF 500
 /**
  * _printf - prints the input on the shell buffer
  * @format: requested format
@@ -18,7 +19,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (format[0] == '%' && !format[1])
 		return (-1);
-	result = malloc(1024);
+	result = malloc(MAX_BUF);
 	if (!result)
 		return (0);
 
