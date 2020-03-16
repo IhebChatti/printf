@@ -1,5 +1,8 @@
 #include "holberton.h"
 #include <unistd.h>
+#include <string.h>
+
+#define _NULL_ "(null)"
 /**
 *_write - write to stdout
 *@c: char to be written
@@ -51,8 +54,11 @@ int string_format(char **str, va_list args)
 	int i = 0;
 
 	s = va_arg(args, char *);
-	if (s == NULL)
+	if (!s)
+	{
+		s = _NULL_;
 		return (-1);
+	}
 	while (s[i])
 	{
 		**str = s[i];
@@ -61,6 +67,12 @@ int string_format(char **str, va_list args)
 	}
 	return (0);
 }
+/**
+*number_format - function to handle decimals
+*@str: a given string
+*@args: arguments
+*Return: 0 on SUCCESS
+*/
 int number_format(char **str __attribute__((unused)), va_list args)
 {
 	int n = va_arg(args, int);
