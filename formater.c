@@ -61,3 +61,10 @@ int string_format(char **str, va_list args)
 	}
 	return (0);
 }
+int number_format(char **str __attribute__((unused)), va_list args)
+{
+	int n = va_arg(args, int);
+
+	itoa(n);
+	return (0);
+}

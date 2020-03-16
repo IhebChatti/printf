@@ -22,5 +22,6 @@ int percent_format(char **, va_list);
 int char_format(char **, va_list);
 int string_format(char **, va_list);
 int number_format(char **str, va_list args);
+void itoa(int n);
 
 #endif /* HOLBERTON_H */
