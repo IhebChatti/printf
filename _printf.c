@@ -11,7 +11,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int value;
+	int value, i;
 	va_list args;
 	char *result;
 
@@ -21,15 +21,16 @@ int _printf(const char *format, ...)
 		return (-1);
 	result = malloc(MAX_BUF);
 	if (!result)
-		return (0);
-
+		return(-1);
+	for (i = 0; i < MAX_BUF; i++)
+		result[i] = '\0';
 	va_start(args, format);
 	value = get_formater(result, format, args);
-	va_end(args);
 	while (*result)
 	{
 		_write(*result);
 		result++;
 	}
+	va_end(args);
 	return (value);
 }
