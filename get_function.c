@@ -5,8 +5,10 @@
 
 #define SPECIFIERS spec_t specs[] = {		\
 		{"c", char_format},		\
-		{"s", string_format},		\
-		{"%", percent_format},		\
+		{"s", string_format},	\
+		{"%", percent_format},	\
+		{"d", number_format},	\
+		{"i", number_format},	\
 		{NULL, NULL}			\
 	}
 /**
@@ -38,7 +40,7 @@ int get_formater(char *res, const char *format, va_list args)
 			*it = '%';
 		format++;
 		i = 0;
-		while (*(specs + i)->sp)
+		while ((specs + i)->sp)
 		{
 			if (*format == '%')
 				percent += 1;
@@ -48,6 +50,12 @@ int get_formater(char *res, const char *format, va_list args)
 				break;
 			}
 			i++;
+		}
+		if ((specs + i)->sp == NULL)
+		{
+			*it = '%';
+			it++;
+			*it++ = *format;
 		}
 		format++;
 	}
