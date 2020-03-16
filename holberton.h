@@ -1,25 +1,18 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
 #include <stdarg.h>
+#ifndef HOLBERTON
+#define HOLBERTON
 
-/**
- * struct spec - Conversion specifire
- * @c: specifier
- * @f: conversion function
- *
- * Description: a Conversion wrapper
- */
-typedef struct spec
+typedef struct specifier
 {
-	char *c;
-	int (*f)(va_list);
+	char *sp;
+	int (*f)(char **, va_list);
 } spec_t;
 
-int _printf(const char *format, ...);
+int _printf(const char *, ...);
+int get_formater(char *, const char *, va_list);
 int _write(char);
-int printstring(va_list);
-int printchar(va_list);
-int printdecimal(va_list);
-void numbertobuf(int);
+int percent_format(char **, va_list);
+int char_format(char **, va_list);
+int string_format(char **, va_list);
 
-#endif /* printf */
+#endif
