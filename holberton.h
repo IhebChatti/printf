@@ -1,7 +1,14 @@
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
 #include <stdarg.h>
-#ifndef HOLBERTON
-#define HOLBERTON
 
+/**
+ * struct specifier - a specifier struct
+ * @sp: the character specifier
+ * @f: the function required
+ *
+ * Description: a structure used to compare the input format flag
+ */
 typedef struct specifier
 {
 	char *sp;
@@ -15,4 +22,4 @@ int percent_format(char **, va_list);
 int char_format(char **, va_list);
 int string_format(char **, va_list);
 
-#endif
+#endif /* HOLBERTON_H */
