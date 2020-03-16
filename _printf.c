@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-#define MAX_BUF 500
+#define MAX_BUF 1024
 /**
  * _printf - prints the input on the shell buffer
  * @format: requested format
