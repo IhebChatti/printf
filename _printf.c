@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	result = malloc(MAX_BUF);
 	if (!result)
-		return(-1);
+		return (-1);
 	for (i = 0; i < MAX_BUF; i++)
 		result[i] = '\0';
 	va_start(args, format);
