@@ -7,7 +7,7 @@
 */
 int _write(char c)
 {
-	return write(1, &c, 1);
+	return (write(1, &c, 1));
 }
 /**
 *percent_format - percent handler
@@ -31,6 +31,7 @@ int percent_format(char **str, va_list args)
 int char_format(char **str, va_list args)
 {
 	char r = va_arg(args, int);
+
 	if (!r)
 		return (-1);
 	**str = r;
@@ -52,7 +53,7 @@ int string_format(char **str, va_list args)
 	s = va_arg(args, char *);
 	if (s == NULL)
 		return (-1);
-	while(s[i])
+	while (s[i])
 	{
 		**str = s[i];
 		(*str)++;
