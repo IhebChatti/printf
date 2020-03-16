@@ -15,7 +15,7 @@ int _write(char c)
 *@args: argument
 *Return: 0 on SUCCESS
 */
-int percent_format(char **str, va_list args)
+int percent_format(char **str, va_list args __attribute__((unused)))
 {
 	**str = '%';
 	(*str)++;
@@ -60,4 +60,16 @@ int string_format(char **str, va_list args)
 		i++;
 	}
 	return (0);
+}
+/**
+*
+*
+*
+*/
+int number_format(char **str __attribute__((unused)), va_list args)
+{
+	int n = va_arg(args, int);
+
+	itoa(n);
+	return(0);
 }
