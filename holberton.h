@@ -28,5 +28,5 @@ char *btoa(unsigned int);
 int intlen(int);
 void array_rev(char *, int);
 int stringlen(char *);
-
+int rot13_format(char **, va_list);
 #endif /* HOLBERTON_H */
