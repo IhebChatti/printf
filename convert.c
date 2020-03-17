@@ -1,32 +1,35 @@
-#include <unistd.h>
 #include "holberton.h"
+#include <stdlib.h>
 /**
-*itoa - print an integer
-*@n: int
-*/
-void itoa(int n)
+ * itoa - convert integer to array
+ * @n: the given number
+ *
+ * Return: a pointer to the null terminated string
+ */
+char *itoa(unsigned int n)
 {
-	if (n / 10 != 0)
+	int len = 0, i = 0;
+	char *s;
+
+	len = intlen(n);
+	s = malloc(len + 1);
+	if (!s)
+		return (NULL);
+	while (n / 10)
 	{
-		itoa(n / 10);
-		if (n > 0)
-		{
-			_write((n % 10) + '0');
-		}
-		else
-		{
-			_write(-n % 10 + '0');
-		}
+		s[i] = (n % 10) + '0';
+		n /= 10;
+		i++;
 	}
-	else if ((n / 10 == 0) && (n % 10 != 0) && (n > 0))
-	{
-		_write((n % 10) + '0');
-	}
-	else if ((n / 10 == 0) && (n % 10 != 0) && (n <= 0))
-	{
-		_write('-');
-		_write((-n % 10) + '0');
-	}
-	else if (n == 0)
-		_write('0');
+	s[i] = (n % 10) + '0';
+	array_rev(s, len);
+	s[i + 1] = '\0';
+	return (s);
 }
+
+/**
+ * btoa - convert integer to binary
+ * @n: the given binary number
+ *
+ * Return: binary number
+ */

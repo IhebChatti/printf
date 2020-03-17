@@ -73,10 +73,29 @@ int string_format(char **str, va_list args)
 *@args: arguments
 *Return: 0 on SUCCESS
 */
-int number_format(char **str __attribute__((unused)), va_list args)
+int number_format(char **str, va_list args)
 {
 	int n = va_arg(args, int);
+	int i;
+	char *number;
 
-	itoa(n);
+	if (n < 0)
+	{
+		**str = '-';
+		(*str)++;
+		n *= (-1);
+	}
+	if (n == 0)
+	{
+		**str = '0';
+		(*str)++;
+		return (0);
+	}
+	number = itoa(n);
+	for (i = 0; number[i]; i++)
+	{
+		**str = number[i];
+		(*str)++;
+	}
 	return (0);
 }
