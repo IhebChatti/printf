@@ -76,6 +76,13 @@ int unsigned_format(char **str, va_list args)
 	return (0);
 }
 
+/**
+ * reverse_format - print the string in reverse
+ * @str: the given list
+ * @args: arguments
+ *
+ * Return: 0 with success
+ */
 int reverse_format(char **str, va_list args)
 {
 	char *s = va_arg(args, char *);
