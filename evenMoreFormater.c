@@ -29,6 +29,7 @@ int S_format(char **str, va_list args)
 			hx = htoa(h);
 			*(*str)++ = *hx;
 			i++;
+			continue;
 		}
 		**str = s[i];
 		(*str)++;
