@@ -1,4 +1,15 @@
 #include "holberton.h"
+#include <unistd.h>
+
+/**
+*_write - write to stdout
+*@c: char to be written
+*Return: 0 on SUCCESS
+*/
+int _write(char c)
+{
+	return (write(1, &c, 1));
+}
 
 /**
  * intlen - Determine the number of digit int integer
@@ -18,6 +29,20 @@ int intlen(int num)
 	return (len);
 }
 
+/**
+ * stringlen - determines the length of string
+ * @str: the given string
+ *
+ * Return: an integer length
+ */
+int stringlen(char *str)
+{
+	int i = 0;
+
+	while (str[i++])
+		;
+	return (i - 1);
+}
 /**
  * array_rev - reverse array
  * @arr: the given array

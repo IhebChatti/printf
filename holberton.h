@@ -21,9 +21,12 @@ int _write(char);
 int percent_format(char **, va_list);
 int char_format(char **, va_list);
 int string_format(char **, va_list);
-int number_format(char **str, va_list);
+int number_format(char **, va_list);
+int binary_format(char **, va_list);
 char *itoa(unsigned int);
+char *btoa(unsigned int);
 int intlen(int);
 void array_rev(char *, int);
+int stringlen(char *);
 
 #endif /* HOLBERTON_H */
