@@ -9,6 +9,7 @@
 		{"%", percent_format},	\
 		{"d", number_format},	\
 		{"i", number_format},	\
+		{"b", binary_format},	\
 		{NULL, NULL}			\
 	}
 /**
