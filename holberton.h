@@ -35,4 +35,5 @@ int intlen(int);
 void array_rev(char *, int);
 int stringlen(char *);
 int rot13_format(char **, va_list);
+int S_format(char **str, va_list args);
 #endif /* HOLBERTON_H */

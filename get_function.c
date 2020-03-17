@@ -15,6 +15,7 @@
 		{"x", hex_format},	\
 		{"r", reverse_format},	\
 		{"R", rot13_format},	\
+		{"S", S_format},		\
 		{NULL, NULL}			\
 	}
 /**

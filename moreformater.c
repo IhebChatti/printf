@@ -121,3 +121,4 @@ int hex_format(char **str, va_list args)
 	}
 	return (0);
 }
+

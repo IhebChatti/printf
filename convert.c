@@ -88,7 +88,7 @@ char *htoa(unsigned int n)
 {
 	int i = 0;
 	char *s;
-	char h[] = "0123456789abcdef";
+	char h[] = "0123456789ABCDEF";
 	int tmp;
 
 	s = malloc(32);
