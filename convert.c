@@ -54,3 +54,22 @@ char *btoa(unsigned int n)
 	array_rev(s, stringlen(s));
 	return (s);
 }
+char *otoa(unsigned int n)
+{
+	int i = 0;
+	char *s;
+
+	s = malloc(33);
+	if (!s)
+		return (NULL);
+	i = 0;
+	while (n / 8)
+	{
+		s[i] = (n % 8) + '0';
+		i++;
+		n /= 8;
+	}
+	s[i] = (n % 8) + '0';
+	array_rev(s, stringlen(s));
+	return (s);
+}

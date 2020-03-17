@@ -10,6 +10,9 @@
 		{"d", number_format},	\
 		{"i", number_format},	\
 		{"b", binary_format},	\
+		{"u", unsigned_format},	\
+		{"o", oct_format},	\
+		{"r", reverse_format},	\
 		{"R", rot13_format},	\
 		{NULL, NULL}			\
 	}
