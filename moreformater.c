@@ -97,3 +97,27 @@ int reverse_format(char **str, va_list args)
 
 	return (0);
 }
+/**
+ * hex_format - prints the hex format of string
+ * @str: the given string
+ * @args: argument
+ *
+ * Return: 0 with success
+ */
+int hex_format(char **str, va_list args)
+{
+
+	int n = va_arg(args, int);
+	int i;
+	char *hex;
+
+	if (n < 0)
+		return (-1);
+	hex = htoa(n);
+	for (i = 0; hex[i]; i++)
+	{
+		**str = hex[i];
+		(*str)++;
+	}
+	return (0);
+}

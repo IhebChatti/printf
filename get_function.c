@@ -12,6 +12,7 @@
 		{"b", binary_format},	\
 		{"u", unsigned_format},	\
 		{"o", oct_format},	\
+		{"x", hex_format},	\
 		{"r", reverse_format},	\
 		{"R", rot13_format},	\
 		{NULL, NULL}			\

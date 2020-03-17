@@ -73,3 +73,32 @@ char *otoa(unsigned int n)
 	array_rev(s, stringlen(s));
 	return (s);
 }
+/*
+ * htoa - converts integer to hex
+ * @n: the given integer
+ *
+ * Return: a pointer to hex string
+ */
+char *htoa(unsigned int n)
+{
+	int i = 0;
+	char *s;
+	char h[] = "0123456789abcdef";
+	int tmp;
+
+	s = malloc(32);
+	if (!s)
+		return (NULL);
+	i = 0;
+	while (n / 16)
+	{
+		tmp = n % 16;
+		s[i] = h[tmp];
+		i++;
+		n /= 16;
+		tmp = 0;
+	}
+	s[i] = h[n % 16];
+	array_rev(s , stringlen(s));
+	return (s);
+}
