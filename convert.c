@@ -33,3 +33,24 @@ char *itoa(unsigned int n)
  *
  * Return: binary number
  */
+char *btoa(unsigned int n)
+{
+	int i = 0;
+	char *s;
+
+	s = malloc(33);
+	if (!s)
+		return (NULL);
+	for (i = 0; i < 33; i++)
+		s[i] = '\0';
+	i = 0;
+	while (n / 2)
+	{
+		s[i] = (n % 2) + '0';
+		i++;
+		n /= 2;
+	}
+	s[i] = (n % 2) + '0';
+	array_rev(s, stringlen(s));
+	return (s);
+}

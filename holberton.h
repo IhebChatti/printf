@@ -25,6 +25,5 @@ int number_format(char **str, va_list);
 char *itoa(unsigned int);
 int intlen(int);
 void array_rev(char *, int);
-int rot13_format(char **str, va_list args);
 
 #endif /* HOLBERTON_H */

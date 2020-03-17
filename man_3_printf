@@ -23,7 +23,7 @@ A custom implementation of printf function
 .B %d && %i
 - prints an integer
 .br
-.B
+.B 
 .SH SEE ALSO
 .I printf(3), asprintf(3), dprintf(3), scanf(3), setlocale(3), wcrtomb(3), wprintf(3), locale(5)
 .SH AUTHOR
