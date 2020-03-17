@@ -9,6 +9,7 @@
 		{"%", percent_format},	\
 		{"d", number_format},	\
 		{"i", number_format},	\
+		{"R", rot13_format},	\
 		{NULL, NULL}			\
 	}
 /**
