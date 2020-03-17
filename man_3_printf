@@ -1,0 +1,30 @@
+.TH man 1 "17 march 2020" "0.1" "_printf function"
+.SH NAME
+.B _printf - custom implementation of printf function
+-
+.SH SYNOPSYS
+.B _printf()
+- Project to be done in teams of 2 people. Creating a custom printf function
+.SH DESCRIPTION
+A custom implementation of printf function
+.B Return value
+- Upon successful return, _printf() return the number of characters printed
+- If an output error is encountered, a negative value is returned.
+.SH Conversion specifiers
+.B %c
+- prints a character
+.br
+.B %%
+- prints a %
+.br
+.B %s
+- prints a string
+.br
+.B %d && %i
+- prints an integer
+.br
+.B 
+.SH SEE ALSO
+.I printf(3), asprintf(3), dprintf(3), scanf(3), setlocale(3), wcrtomb(3), wprintf(3), locale(5)
+.SH AUTHOR
+Issam Sebri, Iheb Chatti
