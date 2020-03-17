@@ -3,6 +3,8 @@
 #include <string.h>
 
 #define _NULL_ "(null)"
+#define MAX_BUF 1024
+
 /**
 *_write - write to stdout
 *@c: char to be written
@@ -10,7 +12,16 @@
 */
 int _write(char c)
 {
-	return (write(1, &c, 1));
+	static int i;
+	static char ch[MAX_BUF];
+
+	if (c == -1 || i >= MAX_BUF)
+	{
+		write(1, ch, 1);
+	}
+	if (c != -1)
+		ch[i++] = c;
+	return (1);
 }
 /**
 *percent_format - percent handler
