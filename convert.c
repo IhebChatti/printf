@@ -54,6 +54,11 @@ char *btoa(unsigned int n)
 	array_rev(s, stringlen(s));
 	return (s);
 }
+/**
+*otoa - octal to array function
+*@n: number to conv
+*Return: string
+*/
 char *otoa(unsigned int n)
 {
 	int i = 0;
@@ -73,7 +78,7 @@ char *otoa(unsigned int n)
 	array_rev(s, stringlen(s));
 	return (s);
 }
-/*
+/**
  * htoa - converts integer to hex
  * @n: the given integer
  *
@@ -99,6 +104,6 @@ char *htoa(unsigned int n)
 		tmp = 0;
 	}
 	s[i] = h[n % 16];
-	array_rev(s , stringlen(s));
+	array_rev(s, stringlen(s));
 	return (s);
 }
