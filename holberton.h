@@ -27,13 +27,14 @@ int oct_format(char **, va_list);
 int unsigned_format(char **, va_list);
 int reverse_format(char **, va_list);
 int hex_format(char **, va_list);
+int rot13_format(char **, va_list);
 char *itoa(unsigned int);
 char *btoa(unsigned int);
 char *otoa(unsigned int);
 char *htoa(unsigned int);
+char *rot13(char *s);
 int intlen(int);
 void array_rev(char *, int);
 int stringlen(char *);
-int rot13_format(char **, va_list);
 int S_format(char **str, va_list args);
 #endif /* HOLBERTON_H */

@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <unistd.h>
+#include <stdlib.h>
 
 /**
 *_write - write to stdout
@@ -62,3 +63,35 @@ void array_rev(char *arr, int len)
 		arr[(len - 1) - i] = tmp;
 	}
 }
+/**
+ * rot13 - convert to rot13
+ * @str: given string
+ *
+ * Return: a pointer to sipher str
+ */
+char *rot13(char *str)
+{
+	int i;
+	int j;
+	int l = stringlen(str);
+	char *s;
+	char *alph = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char *shift = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+
+	s = malloc(l + 1);
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		for (j = 0; j < 52; j++)
+		{
+			if (str[i] == alph[j])
+			{
+				s[i] = shift[j];
+				break;
+			}
+		}
+		if (j == 52)
+			s[i] = str[i];
+	}
+	return (s);
+}
+
