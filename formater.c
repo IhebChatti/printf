@@ -1,7 +1,4 @@
 #include "holberton.h"
-#include <unistd.h>
-#include <string.h>
-
 #define _NULL_ "(null)"
 
 /**

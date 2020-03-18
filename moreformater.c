@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <stdarg.h>
-#include <stdlib.h>
 
 /**
 *rot13_format - prints the rot13'ed string

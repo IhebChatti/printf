@@ -1,6 +1,12 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
+
+/* Include files */
 #include <stdarg.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <limits.h>
 
 /**
  * struct specifier - a specifier struct
@@ -15,9 +21,16 @@ typedef struct specifier
 	int (*f)(char **, va_list);
 } spec_t;
 
+/* the printf function */
 int _printf(const char *, ...);
-int get_formater(char *, const char *, va_list);
+
+/* the write function */
 int _write(char);
+
+/* function wrapper */
+int get_formater(char *, const char *, va_list);
+
+/* Specifier function */
 int percent_format(char **, va_list);
 int char_format(char **, va_list);
 int string_format(char **, va_list);
@@ -28,13 +41,18 @@ int unsigned_format(char **, va_list);
 int reverse_format(char **, va_list);
 int hex_format(char **, va_list);
 int rot13_format(char **, va_list);
+int S_format(char **str, va_list args);
+
+/* Converter */
 char *itoa(unsigned int);
 char *btoa(unsigned int);
 char *otoa(unsigned int);
 char *htoa(unsigned int);
 char *rot13(char *s);
+
+/* Utilities and tool */
 int intlen(int);
 void array_rev(char *, int);
 int stringlen(char *);
-int S_format(char **str, va_list args);
+
 #endif /* HOLBERTON_H */
