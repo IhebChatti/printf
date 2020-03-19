@@ -1,7 +1,7 @@
 #include "holberton.h"
 
-#define SPECIFIERS spec_t specs[] = {		\
-		{"c", char_format},		\
+#define SPECIFIERS spec_t specs[] = {	\
+		{"c", char_format},	\
 		{"s", string_format},	\
 		{"%", percent_format},	\
 		{"d", number_format},	\
@@ -12,8 +12,9 @@
 		{"x", hex_format},	\
 		{"r", reverse_format},	\
 		{"R", rot13_format},	\
-		{"S", S_format},		\
-		{NULL, NULL}			\
+		{"S", S_format},	\
+		{"+", plus_handler},	\
+		{NULL, NULL}		\
 	}
 /**
 *get_formater - wrapper to get the function needed
@@ -26,6 +27,7 @@ int get_formater(char *res, const char *format, va_list args)
 {
 	char *it;
 	int i, percent = 0;
+	char flag;
 
 	SPECIFIERS;
 	if (format == NULL)
@@ -48,9 +50,14 @@ int get_formater(char *res, const char *format, va_list args)
 		{
 			if (*format == '%')
 				percent += 1;
+			if (*format == '+')
+			{
+				flag = '+';
+				format++;
+			}
 			if (*format == *(specs + i)->sp)
 			{
-				(specs + i)->f(&it, args);
+				(specs + i)->f(&it, args, &flag);
 				break;
 			}
 			i++;

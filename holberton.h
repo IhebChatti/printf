@@ -31,18 +31,20 @@ int _write(char);
 int get_formater(char *, const char *, va_list);
 
 /* Specifier function */
-int percent_format(char **, va_list);
-int char_format(char **, va_list);
-int string_format(char **, va_list);
-int number_format(char **, va_list);
-int binary_format(char **, va_list);
-int oct_format(char **, va_list);
-int unsigned_format(char **, va_list);
-int reverse_format(char **, va_list);
-int hex_format(char **, va_list);
-int rot13_format(char **, va_list);
-int S_format(char **str, va_list args);
+int percent_format(char **, va_list, char *);
+int char_format(char **, va_list, char *);
+int string_format(char **, va_list, char *);
+int number_format(char **, va_list, char *);
+int binary_format(char **, va_list, char *);
+int oct_format(char **, va_list, char *);
+int unsigned_format(char **, va_list, char *);
+int reverse_format(char **, va_list, char *);
+int hex_format(char **, va_list, char *);
+int rot13_format(char **, va_list, char *);
+int S_format(char **, va_list, char *);
 
+/* Flags handler */
+int plus_handler(char **, va_list);
 /* Converter */
 char *itoa(unsigned int);
 char *btoa(unsigned int);

@@ -7,7 +7,7 @@
 *
 *Return: int
 */
-int rot13_format(char **str, va_list args)
+int rot13_format(char **str, va_list args, char *flg)
 {
 	char *s;
 	char *rot;
@@ -30,7 +30,7 @@ int rot13_format(char **str, va_list args)
  *
  * Return: pointer to string
  */
-int oct_format(char **str, va_list args)
+int oct_format(char **str, va_list args, char *flg)
 {
 	int n = va_arg(args, int);
 	int i;
@@ -54,7 +54,7 @@ int oct_format(char **str, va_list args)
  *
  * Return: pointer to string
  */
-int unsigned_format(char **str, va_list args)
+int unsigned_format(char **str, va_list args, char *flg)
 {
 	int n = va_arg(args, int);
 	int i;
@@ -78,7 +78,7 @@ int unsigned_format(char **str, va_list args)
  *
  * Return: 0 with success
  */
-int reverse_format(char **str, va_list args)
+int reverse_format(char **str, va_list args, char *flg)
 {
 	char *s = va_arg(args, char *);
 	int len = stringlen(s);
@@ -99,7 +99,7 @@ int reverse_format(char **str, va_list args)
  *
  * Return: 0 with success
  */
-int hex_format(char **str, va_list args)
+int hex_format(char **str, va_list args, char *flg)
 {
 
 	int n = va_arg(args, int);

@@ -7,7 +7,7 @@
 * @args: argument
 * Return: 0 on SUCCESS
 */
-int percent_format(char **str, va_list args __attribute__((unused)))
+int percent_format(char **str, va_list args, char *flg)
 {
 	**str = '%';
 	(*str)++;
@@ -20,7 +20,7 @@ int percent_format(char **str, va_list args __attribute__((unused)))
 * Return: 1 on SUCCESS
 * -1 on FAILURE
 */
-int char_format(char **str, va_list args)
+int char_format(char **str, va_list args, char *flg)
 {
 	char r = va_arg(args, int);
 
@@ -37,7 +37,7 @@ int char_format(char **str, va_list args)
 * Return: 0 on SUCCESS
 * -1 on ERROR
 */
-int string_format(char **str, va_list args)
+int string_format(char **str, va_list args, char *flg)
 {
 	char *s;
 	int i = 0;
@@ -62,7 +62,7 @@ int string_format(char **str, va_list args)
 *@args: arguments
 *Return: 0 on SUCCESS
 */
-int number_format(char **str, va_list args)
+int number_format(char **str, va_list args, char *flg)
 {
 	int n = va_arg(args, int);
 	int i;
@@ -96,7 +96,7 @@ int number_format(char **str, va_list args)
  *
  * Return: 0 on success
  */
-int binary_format(char **str, va_list args)
+int binary_format(char **str, va_list args, char *flg)
 {
 	unsigned int n = va_arg(args, int);
 	int i;
