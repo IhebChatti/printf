@@ -13,7 +13,6 @@
 		{"r", reverse_format},	\
 		{"R", rot13_format},	\
 		{"S", S_format},	\
-		{"+", plus_handler},	\
 		{NULL, NULL}		\
 	}
 /**
@@ -27,7 +26,6 @@ int get_formater(char *res, const char *format, va_list args)
 {
 	char *it;
 	int i, percent = 0;
-	char flag;
 
 	SPECIFIERS;
 	if (format == NULL)
@@ -50,14 +48,9 @@ int get_formater(char *res, const char *format, va_list args)
 		{
 			if (*format == '%')
 				percent += 1;
-			if (*format == '+')
-			{
-				flag = '+';
-				format++;
-			}
 			if (*format == *(specs + i)->sp)
 			{
-				(specs + i)->f(&it, args, &flag);
+				(specs + i)->f(&it, args);
 				break;
 			}
 			i++;

@@ -6,7 +6,7 @@
 *
 *Return: 0 with success
 */
-int S_format(char **str, va_list args, char *flg)
+int S_format(char **str, va_list args)
 {
 	char *s, *hx;
 	int i = 0;
